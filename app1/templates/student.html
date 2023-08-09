@@ -1,0 +1,20 @@
+{%extends "Base.html"%}
+
+{%block title%} Student {%endblock%}
+
+{%block content%}
+<h3><a href="{%url 'create' %}">Create student </a></h3>
+{%if students%}
+
+    {%for i in students %}
+        <h3><a href="{% url 'detail' i.pk %}">{{i.surname}}  {{i.name}} </a></h3>
+
+
+    {%endfor%}
+
+{%else%}
+<h5>No students yet...</h5>
+
+{%endif%}
+
+{%endblock%}
